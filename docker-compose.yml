@@ -1,0 +1,14 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  postgis:
+    build: .
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./conf/postgresql.conf:/etc/postgresql/postgresql.conf
+      - ./data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER : "postgres"
+      POSTGRES_PASSWORD : "1234qwer"
+      POSTGRES_DB : "postgres"
+      POSTGRESQL_DIR : "./data"
