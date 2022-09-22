@@ -1,7 +1,7 @@
 version: "3.9"  # optional since v1.27.0
 services:
   postgis:
-    image: postgis/postgis:14-3.3-alpine
+    image: postgis/postgis:14-3.3-bullseye #shp2pgsql is not working
     ports:
       - "5432:5432"
     volumes:
