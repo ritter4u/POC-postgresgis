@@ -1,13 +1,13 @@
 version: "3.9"  # optional since v1.27.0
 services:
   postgis:
-    build: .
+    image: postgis/postgis:14-3.3-alpine
     ports:
       - "5432:5432"
     volumes:
-      - ./conf/postgresql.conf:/etc/postgresql/postgresql.conf
-      - ./gisdata:/gisdata
+      - ./conf/postgresql.conf:/etc/postgresql/
       - ./dbdata:/var/lib/postgresql/data
+      - ./gisdata:/gisdata
     environment:
       POSTGRES_USER : "postgres"
       POSTGRES_PASSWORD : "1234qwer"
